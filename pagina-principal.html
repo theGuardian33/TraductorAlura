@@ -14,20 +14,23 @@
 <body>
     <header>
 
-        <h1>Traductor Alura Challenge 2024</h1>
+        <h1 class="titulo">Traductor Alura Challenge 2024</h1>
 
     </header>
 
 
     <main>
 
-        <div>
-            <textarea id="cifrado" cols="30" rows="10"></textarea>
+        <div class="entradaTexto">
+            
+            <textarea class="texto" id="cifrado" cols="30" rows="10"></textarea>
             <input type="button" onclick="cifrar()" value="Cifrar">
-            <button>Copiar</button>
-            <textarea id="descifrado" cols="30" rows="10"></textarea>
+            <button class="copiar" onclick="copiarTexto()">Copiar</button>
+
+            <textarea class="texto" id="descifrado" cols="30" rows="10"></textarea>
             <input type="button" onclick="DEScifrar()" value="Descifrar">
-            <button>Copiar</button>
+            <button  class="copiar" onclick="copiarTexto1()">Copiar</button>
+
         </div>
 
 
@@ -70,6 +73,24 @@
             
         }
         
+
+        function copiarTexto() {
+
+            let textarea = document.getElementById("cifrado");
+            textarea.select();
+            document.execCommand("copy");
+            alert("¡Texto copiado!");
+}
+
+        function copiarTexto1() {
+
+            let textarea = document.getElementById("descifrado");
+            textarea.select();
+            document.execCommand("copy");
+            alert("¡Texto copiado!");
+        }
+        
+
         </script>
 </body>
 </html>
